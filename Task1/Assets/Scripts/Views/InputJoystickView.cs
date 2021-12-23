@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using Views;
 
-namespace Models
+namespace Views
 {
     internal class InputJoystickView : BaseInputView
     {
