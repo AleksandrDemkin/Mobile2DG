@@ -1,4 +1,5 @@
-﻿using Controllers;
+﻿using AnalyticsTools;
+using Controllers;
 using Models;
 using Profile;
 using UnityEngine;
@@ -9,11 +10,13 @@ namespace Views
     {
         [SerializeField] private Transform _placeForUi;
 
-        private MainController _mainController;
+        [SerializeField] private AdsTools _adsTools;
 
+        private MainController _mainController;
+        
         private void Awake()
         {
-            var profilePlayer = new ProfilePlayer(15f);
+            var profilePlayer = new ProfilePlayer(15f, _adsTools);
             profilePlayer.CurrentState.Value = GameState.Start;
             _mainController = new MainController(_placeForUi, profilePlayer);
         }

@@ -29,6 +29,11 @@ namespace Controllers
         private void StartGame()
         {
             _profilePlayer.CurrentState.Value = GameState.Game;
+            _profilePlayer.AnalyticsTools.SendMessage("Start game", ("Time", Time.realtimeSinceStartup));
+            _profilePlayer.AnalyticsTools.SendMessage("Start game");
+            _profilePlayer.AnalyticsTools.SendMessage("Start game", ("Time", Time.captureFramerate));
+            _profilePlayer.AdsShower.ShowBanner();
+            _profilePlayer.AdsShower.ShowInterstitialVideo();
         }
     }
 }
